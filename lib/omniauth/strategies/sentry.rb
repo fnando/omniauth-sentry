@@ -4,10 +4,9 @@ require "omniauth-oauth2"
 module OmniAuth
   module Strategies
     class Sentry < OmniAuth::Strategies::OAuth2
-      option :client_options, {
-        authorize_url: "https://sentry.io/oauth/authorize/",
-        token_url: "https://sentry.io/oauth/token/"
-      }
+      option :client_options,
+             authorize_url: "https://sentry.io/oauth/authorize/",
+             token_url: "https://sentry.io/oauth/token/"
 
       uid do
         info.fetch(:id)

@@ -1,0 +1,25 @@
+---
+engines:
+  rubocop:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - "ruby"
+  fixme:
+    enabled: true
+    exclude_paths:
+      - config/engines.yml
+  markdownlint:
+    enabled: true
+  shellcheck:
+    enabled: true
+ratings:
+  paths:
+  - "**.rb"
+  - "**.md"
+exclude_paths:
+  - .bundle/
+  - test/**/*
+  - benchmarks/**/*

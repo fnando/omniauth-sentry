@@ -1,7 +1,7 @@
 require "test_helper"
 
 class ClientOptionsTest < Minitest::Test
-  let(:app) { -> env {} }
+  let(:app) { ->(env) { } }
 
   let(:strategy) do
     OmniAuth::Strategies::Sentry.new(app, "consumer_id", "consumer_secret")
