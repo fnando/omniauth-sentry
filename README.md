@@ -1,8 +1,7 @@
 # Omniauth::Sentry
 
-[![Travis-CI](https://travis-ci.org/fnando/omniauth-sentry.png)](https://travis-ci.org/fnando/omniauth-sentry)
-[![CodeClimate](https://codeclimate.com/github/fnando/omniauth-sentry.png)](https://codeclimate.com/github/fnando/omniauth-sentry)
-[![Test Coverage](https://codeclimate.com/github/fnando/omniauth-sentry/badges/coverage.svg)](https://codeclimate.com/github/fnando/omniauth-sentry/coverage)
+[![Travis-CI](https://travis-ci.org/fnando/omniauth-sentry.svg)](https://travis-ci.org/fnando/omniauth-sentry)
+[![CodeClimate](https://codeclimate.com/github/fnando/omniauth-sentry.svg)](https://codeclimate.com/github/fnando/omniauth-sentry)
 [![Gem](https://img.shields.io/gem/v/omniauth-sentry.svg)](https://rubygems.org/gems/omniauth-sentry)
 [![Gem](https://img.shields.io/gem/dt/omniauth-sentry.svg)](https://rubygems.org/gems/omniauth-sentry)
 
@@ -24,11 +23,16 @@ Or install it yourself as:
 
 ## Usage
 
-`OmniAuth::Strategies::Sentry` is simply a Rack middleware. Read the OmniAuth docs for detailed instructions: <https://github.com/intridea/omniauth>.
+`OmniAuth::Strategies::Sentry` is simply a Rack middleware. Read the OmniAuth
+docs for detailed instructions: <https://github.com/intridea/omniauth>.
 
-First, create a new application at `https://sentry.io/api/applications/`. Your callback URL must be something like `https://example.com/auth/sentry/callback`. For development you can use `http://127.0.0.1:3000/auth/sentry/callback`.
+First, create a new application at `https://sentry.io/api/applications/`. Your
+callback URL must be something like `https://example.com/auth/sentry/callback`.
+For development you can use `http://127.0.0.1:3000/auth/sentry/callback`.
 
-Here's a quick example, adding the middleware to a Rails app in `config/initializers/omniauth.rb`. This example assumes you're exporting your credentials as environment variables.
+Here's a quick example, adding the middleware to a Rails app in
+`config/initializers/omniauth.rb`. This example assumes you're exporting your
+credentials as environment variables.
 
 Possible scopes (you have to separate them with a space):
 
@@ -49,8 +53,8 @@ Possible scopes (you have to separate them with a space):
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :sentry, 
-            ENV['SENTRY_CLIENT_ID'], 
+  provider :sentry,
+            ENV['SENTRY_CLIENT_ID'],
             ENV['SENTRY_CLIENT_SECRET'],
             scope: 'org:read member:read project:read team:read'
 end

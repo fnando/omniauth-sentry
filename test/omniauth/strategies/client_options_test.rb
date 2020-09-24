@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class ClientOptionsTest < Minitest::Test
@@ -12,10 +14,12 @@ class ClientOptionsTest < Minitest::Test
   end
 
   test "sets authorize url" do
-    assert_equal "https://sentry.io/oauth/authorize/", strategy.options.client_options.authorize_url
+    assert_equal "https://sentry.io/oauth/authorize/",
+                 strategy.options.client_options.authorize_url
   end
 
   test "sets token url" do
-    assert_equal "https://sentry.io/oauth/token/", strategy.options.client_options.token_url
+    assert_equal "https://sentry.io/oauth/token/",
+                 strategy.options.client_options.token_url
   end
 end
